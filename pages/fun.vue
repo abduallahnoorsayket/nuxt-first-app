@@ -5,6 +5,7 @@
 <script>
 export default {
   name: "fun",
+  layout: "blog",
 };
 </script>
 
