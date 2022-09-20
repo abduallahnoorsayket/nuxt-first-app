@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  // watchQuery: ['page'],
   async asyncData({ params, $axios }) {
     const post = await $axios.$get(`https://api.nuxtjs.dev/posts/${params.id}`);
     return { post };

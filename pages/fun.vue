@@ -5,14 +5,14 @@
       Ipsum.
     </h2>
     <img src="~/assets/Burger.jpeg" />
-    <br><br><br>
+    <br /><br /><br />
     <a href="tel: +7 (982) 536-50-77">+7 (982) 536-50-77</a>
     <div>{{ content }}</div>
     <button @click="refresh">Refresh</button>
     <hr />
     <button type="button" class="btn btn-primary">
-  Notifications <span class="badge badge-light">4</span>
-</button>
+      Notifications <span class="badge badge-light">4</span>
+    </button>
     <Lazynuxt-mountains v-if="show" />
     <button v-if="!show" @click="show = true">Show List</button>
     <hr />
@@ -34,7 +34,10 @@
 <script>
 export default {
   name: "fun",
-  layout: "blog",
+  // layout: "blog",
+  // layout(context) {
+  //   return "blog";
+  // },
   data() {
     return {
       show: false,
@@ -89,3 +92,4 @@ h1 {
   color: green;
 }
 </style>
+

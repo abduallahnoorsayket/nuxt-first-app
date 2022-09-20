@@ -1,5 +1,5 @@
 <template>
-  <h5>User ID page</h5>
+  <h1>this is the about page.</h1>
 </template>
 
 <script>

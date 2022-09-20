@@ -59,8 +59,8 @@ export default {
   // css: [],
   css: ["~/assets/main.css"],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
-
+  // plugins: [],
+  plugins: ["~/plugins/axios.js", "~/plugins/vue-tooltip.js"],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -77,5 +77,6 @@ export default {
   router: {
     trailingSlash: true,
     linkActiveClass: "nuxt-link-active",
+    middleware: "stats",
   },
 };
