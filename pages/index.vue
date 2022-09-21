@@ -15,6 +15,21 @@
     </div>
     <NuxtLink to="/fun/">FUN page</NuxtLink>
     <mountain-list />
+    <hr />
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+          <span v-if="counter"> {{ counter }}</span>
+          <button
+            type="button"
+            class="btn btn-success"
+            @click="incrementCounter()"
+          >
+            Increment
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -27,6 +42,16 @@ export default {
   name: "IndexPage",
   transition: "home",
   mode: "",
+  computed: {
+    counter() {
+      return this.$store.getters.getCounter;
+    },
+  },
+  methods: {
+    incrementCounter() {
+      this.$store.commit("increment");
+    },
+  },
   // transition: {
   //   name: "fun",
   //   mode: "out-in",
