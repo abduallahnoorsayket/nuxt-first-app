@@ -57,16 +57,16 @@ export default {
       this.$nuxt.refresh();
     },
   },
-  head: {
-    title: "Fun page",
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content: "FUN page description",
-      },
-    ],
-  },
+  // head: {
+  //   title: "Fun page",
+  //   meta: [
+  //     {
+  //       hid: "description",
+  //       name: "description",
+  //       content: "FUN page description",
+  //     },
+  //   ],
+  // },
   head() {
     return {
       script: [
