@@ -4,7 +4,7 @@
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Ipsum.
     </h2>
-    <img src="~/assets/Burger.jpeg" />
+    <img src="~images/Burger.jpeg" />
     <br /><br /><br />
     <a href="tel: +7 (982) 536-50-77">+7 (982) 536-50-77</a>
     <div>{{ content }}</div>
@@ -23,16 +23,19 @@
       Lorem Ipsum is that it has a more-or-less normal purpose (injected humour
       and the like).
     </h1>
+
+    <AwesomeButton></AwesomeButton>
+    <br />
+    <AwesomeAlerts></AwesomeAlerts>
     <hr />
-    <client-only placeholder="Loading...">
-      <!-- this component will only be rendered on client-side -->
-      <!-- <comments /> -->
-    </client-only>
   </div>
 </template>
 
 <script>
+import Button from "../components/awesome/Button.vue";
+import TestButton from "../components/testButton.vue";
 export default {
+  components: { Button, TestButton },
   name: "fun",
   // layout: "blog",
   // layout(context) {
@@ -41,6 +44,7 @@ export default {
   data() {
     return {
       show: false,
+      title: "Hello World!",
     };
   },
   asyncData() {
@@ -69,19 +73,32 @@ export default {
   // },
   head() {
     return {
-      script: [
+      title: this.title,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
-          src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js",
-        },
-      ],
-      link: [
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css?family=Roboto&display=swap",
+          hid: "description",
+          name: "description",
+          content: "My custom description",
         },
       ],
     };
   },
+  // head() {
+  //   return {
+  //     script: [
+  //       {
+  //         src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js",
+  //       },
+  //     ],
+  //     link: [
+  //       {
+  //         rel: "stylesheet",
+  //         href: "https://fonts.googleapis.com/css?family=Roboto&display=swap",
+  //       },
+  //     ],
+  //   };
+  // },
 };
 </script>
 <style scoped>
@@ -92,4 +109,3 @@ h1 {
   color: green;
 }
 </style>
-

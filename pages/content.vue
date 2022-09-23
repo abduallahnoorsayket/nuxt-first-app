@@ -3,14 +3,14 @@
   <article>
     <h1>{{ page.title }}</h1>
     <h5>{{ page.description }}</h5>
-    <nuxt-content :document="page" />
+    <nuxt-content :document="{ body: page.excerpt }" />
   </article>
 </template>
 
 <script>
 export default {
   async asyncData({ $content }) {
-    const page = await $content("home").fetch();
+    const page = await $content("home").search("hello").fetch();
     return {
       page,
     };

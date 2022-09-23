@@ -1,3 +1,4 @@
+import { resolve } from "path";
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -62,7 +63,11 @@ export default {
   // plugins: [],
   plugins: ["~/plugins/axios.js", "~/plugins/vue-tooltip.js"],
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  // components: true,
+  components: [
+    '~/components',
+    { path: '~/components/awesome/', prefix: 'awesome' }
+  ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [],
@@ -76,10 +81,19 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  alias: {
+    images: resolve(__dirname, "./assets/images"),
+    // style: resolve(__dirname, "./assets/style"),
+    // data: resolve(__dirname, "./assets/other/data"),
+  },
   // My custom codes
   router: {
     trailingSlash: true,
     linkActiveClass: "nuxt-link-active",
     middleware: "stats",
+  },
+  cli: {
+    badgeMessages: ["Hello World sayket!"],
+    bannerColor: "red",
   },
 };

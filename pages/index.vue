@@ -30,6 +30,9 @@
         </div>
       </div>
     </div>
+    <hr />
+    <nuxt-content :document="articles" />
+    <hr />
   </div>
 </template>
 
@@ -50,6 +53,16 @@ export default {
   methods: {
     incrementCounter() {
       this.$store.commit("increment");
+    },
+    async asyncData({ $content, params }) {
+      const articles = await $content("articles", params.slug)
+        .only(["title", "description"])
+        .sortBy("createdAt", "asc")
+        .fetch();
+
+      return {
+        articles,
+      };
     },
   },
   // transition: {
