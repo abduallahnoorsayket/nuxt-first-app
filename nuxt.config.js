@@ -43,12 +43,12 @@ export default {
       },
     ],
   },
-  loading: {
-    color: "green",
-    height: "5px",
-    throttle: 0,
-  },
-  // loading: "~/components/LoadingBar.vue",
+  // loading: {
+  //   color: "green",
+  //   height: "50px",
+  //   throttle: 0,
+  // },
+  loading: "~/components/LoadingBar.vue",
   loadingIndicator: {
     name: "circle",
     color: "#3B8070",
@@ -65,8 +65,8 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   // components: true,
   components: [
-    '~/components',
-    { path: '~/components/awesome/', prefix: 'awesome' }
+    "~/components",
+    { path: "~/components/awesome/", prefix: "awesome" },
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -95,5 +95,12 @@ export default {
   cli: {
     badgeMessages: ["Hello World sayket!"],
     bannerColor: "red",
+  },
+  pageTransition: {
+    name: "fun",
+    mode: "out-in",
+    beforeEnter(el) {
+      console.log("Before enter...");
+    },
   },
 };

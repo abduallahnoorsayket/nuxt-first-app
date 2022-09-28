@@ -8,3 +8,12 @@
 .page-leave-to {
   opacity: 0;
 }
+.fun-enter-active,
+.fun-leave-active {
+  transition: opacity 0.5s;
+  background: green;
+}
+.fun-enter,
+.fun-leave-to {
+  opacity: 0;
+}

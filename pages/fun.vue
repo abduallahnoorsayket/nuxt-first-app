@@ -19,19 +19,19 @@
     <NuxtLink to="/user/" class="nuxt-link-active">user page</NuxtLink>
     <h1>
       It is a long established fact that a reader will be distracted by the
-      readable content of a page when looking at its layout. The point of using
-      Lorem Ipsum is that it has a more-or-less normal purpose (injected humour
-      and the like).
     </h1>
 
     <AwesomeButton></AwesomeButton>
     <br />
     <AwesomeAlerts></AwesomeAlerts>
     <hr />
+
+    
+    <hr />
   </div>
 </template>
 
-<script>
+<script >
 import Button from "../components/awesome/Button.vue";
 import TestButton from "../components/testButton.vue";
 export default {
@@ -60,6 +60,23 @@ export default {
     refresh() {
       this.$nuxt.refresh();
     },
+// animation_show(){
+//   anime.timeline({loop: true})
+//   .add({
+//     targets: '.ml15 .word',
+//     scale: [14,1],
+//     opacity: [0,1],
+//     easing: "easeOutCirc",
+//     duration: 800,
+//     delay: (el, i) => 800 * i
+//   }).add({
+//     targets: '.ml15',
+//     opacity: 0,
+//     duration: 1000,
+//     easing: "easeOutExpo",
+//     delay: 1000
+//   });
+// }
   },
   // head: {
   //   title: "Fun page",
@@ -99,6 +116,7 @@ export default {
   //     ],
   //   };
   // },
+
 };
 </script>
 <style scoped>
@@ -107,5 +125,17 @@ h1 {
 }
 .nuxt-link-active {
   color: green;
+}
+/*  */
+.ml15 {
+  font-weight: 800;
+  font-size: 3.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.ml15 .word {
+  display: inline-block;
+  line-height: 1em;
 }
 </style>
